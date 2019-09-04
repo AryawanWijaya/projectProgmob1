@@ -18,10 +18,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main); //1 java hanya bisa pakai 1 xml, tapi 1 xml bisa pnya banyak.. ini dia panggil activity_main.xml
 
         TextView textView = findViewById(R.id.mainActivityTextView); //R adl kelas yang digenerate olh layout, jadi masuknya di R smua
-
-
-        textView.setText(R.string.test_untuk_update_view); //sama seperti variabel global
         Button myBtn = findViewById(R.id.button1);
+        Button helpBtn =findViewById(R.id.helpButton);
+        Button btnLayout = findViewById(R.id.btnTest);
+        Button btnTableLayout = findViewById(R.id.btnTableLayout);
+        Button btnProteinTrackerLayout =findViewById(R.id.btnProteinTrackerLayout);
+
+
+        textView.setText(R.string.test_untuk_update_view); //sama seperti variabel global dia tersimpat di res->value ->string
         myBtn.setOnClickListener(myBtnClickListener);
 
       /*  myBtn.setOnClickListener(new View.OnClickListener() {
@@ -31,10 +35,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Proteintracker",myEditText.getText().toString());
             }
         });*/
-        Button helpBtn =findViewById(R.id.helpButton);
-        helpBtn.setOnClickListener(helpButtonListener);
 
-        Button btnLayout = findViewById(R.id.btnTest);
+
+        helpBtn.setOnClickListener(helpButtonListener);
         btnLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,6 +45,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btnTableLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,TableLayoutActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnProteinTrackerLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ProteinTracker_layout.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         if (savedInstanceState !=null){ //fungsinya dia itu ngecek kadang klo di rottae hp itu ngerefresh activity trus apa yng sdh ditulis ilang
             //makkannya di simpan di state trus di cek disini, jika sdh ada tulisane maa dia akan ngeluarke tulisane
