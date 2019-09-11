@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProteinTracker_layout"></activity>
+        <activity android:name=".Main3FragmentActivity"></activity>
+        <activity android:name=".ProteinTracker_layout" />
         <activity android:name=".TableLayoutActivity" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".HelpActivity" />
