@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MahasiswaFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnAddMhs"
+                android:layout_width="47dp"
+                android:layout_height="47dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="+"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnDeleteMhs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Delete"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnUpdateMhs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="28dp"
+                android:text="Update"
+                app:layout_constraintEnd_toStartOf="@+id/btnDeleteMhs"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtMhs1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="80dp"
+        android:layout_weight="1"
+        android:text="1. Nim Mhs                                      Nama Mhs" />
+
+    <TextView
+        android:id="@+id/txtMhs2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="100dp"
+        android:layout_weight="1"
+        android:text="2. Nim Mhs                                      Nama Mhs" />
+
+    <TextView
+        android:id="@+id/txtMhs3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="120dp"
+        android:layout_weight="1"
+        android:text="3. Nim Mhs                                      Nama Mhs" />
+
+    <TextView
+        android:id="@+id/txtMhs4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="140dp"
+        android:layout_weight="1"
+        android:text="4. Nim Mhs                                      Nama Mhs" />
+
+    <TextView
+        android:id="@+id/txtMhs5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="160dp"
+        android:layout_weight="1"
+        android:text="5. Nim Mhs                                      Nama Mhs" />
+
+    <TextView
+        android:id="@+id/txtMhs6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="180dp"
+        android:layout_weight="1"
+        android:text="6. Nim Mhs                                      Nama Mhs" />
+
+    <TextView
+        android:id="@+id/txtMhs7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="200dp"
+        android:layout_weight="1"
+        android:text="6. Nim Mhs                                      Nama Mhs" />
+
+</FrameLayout>
