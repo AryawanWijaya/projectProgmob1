@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnProteinTrackerLayout =findViewById(R.id.btnProteinTrackerLayout);
         Button btnFragment = findViewById(R.id.btnFragment);
         Button btnMahasiswa = findViewById(R.id.btnMahasiswa);
+        Button btnList = findViewById(R.id.btnList);
 
 
         textView.setText(R.string.test_untuk_update_view); //sama seperti variabel global dia tersimpat di res->value ->string
@@ -73,6 +74,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,MainMahasiswaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ListActivity.class);
                 startActivity(intent);
             }
         });
