@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class ListMhsActivity extends AppCompatActivity {
 
     String [] mhs ={"Riyan Mozes Sahetapy","Brian Eldrin Sombuk","Elias Aru F. Langer",
@@ -27,7 +29,7 @@ public class ListMhsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_mhs);
         Button addMhs = findViewById(R.id.btnAddMhs);
-        Button editMhs = findViewById(R.id.btnEdit);
+        final Button editMhs = findViewById(R.id.btnEdit);
         ListView listMhs = findViewById(R.id.ListMhs);
 
         listMhs.setAdapter(new ArrayAdapter<String>(ListMhsActivity.this,android.R.layout.simple_list_item_1,mhs));
@@ -42,6 +44,13 @@ public class ListMhsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ListMhsActivity.this,CreadMhsActivity.class);
+                startActivity(intent);
+            }
+        });
+        editMhs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(ListMhsActivity.this,EditMhsActivity.class);
                 startActivity(intent);
             }
         });
