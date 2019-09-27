@@ -1,6 +1,7 @@
 package com.example.projectprogmoba1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
         Button btnMahasiswa = findViewById(R.id.btnMahasiswa);
         Button btnList = findViewById(R.id.btnList);
         Button btnListMhs = findViewById(R.id.btnListMhs);
+        Button btnCardView = findViewById(R.id.btnCardView);
+        Button btnCardViewInclass = findViewById(R.id.btnCardViewInclass);
+        Button btnCardViewMhs = findViewById(R.id.btnCardViewMhs);
 
 
         textView.setText(R.string.test_untuk_update_view); //sama seperti variabel global dia tersimpat di res->value ->string
@@ -91,6 +95,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,ListMhsActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnCardViewInclass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,InClassRecyclerViewActvity.class);
+                startActivity(intent);
+            }
+        });
+        btnCardViewMhs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, TugasRecycleViewActivity.class);
                 startActivity(intent);
             }
         });
