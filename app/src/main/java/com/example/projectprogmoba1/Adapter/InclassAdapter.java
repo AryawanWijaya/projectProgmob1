@@ -25,8 +25,10 @@ public class InclassAdapter extends RecyclerView.Adapter<InclassAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        //inflater utk membaca file xmlnya, disimpan ke view krn kita mau pake kelas ViewHolder yg
+        //paramnya view
         View view =layoutInflater.inflate(R.layout.card_view_inclass,parent,false);
-        return new ViewHolder(view);
+        return new ViewHolder(view); //memanggil kelas ViewHolder dengan param hasil inflater
     }
 
     @Override
