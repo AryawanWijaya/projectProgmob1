@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TugasRecycleViewActivity">
+        <activity android:name=".CobaMenuActivity">
 
         </activity>
-        <activity android:name=".InClassRecyclerViewActvity"/>
-        <activity android:name=".RecyclerViewActivity"></activity>
+        <activity android:name=".TugasRecycleViewActivity"></activity>
+        <activity android:name=".InClassRecyclerViewActvity" />
+        <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".EditMhsActivity" />
         <activity android:name=".CreadMhsActivity" />
         <activity android:name=".ListMhsActivity" />
@@ -24,12 +25,12 @@
         <activity android:name=".TableLayoutActivity" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".HelpActivity" />
-        <activity android:name=".MainActivity" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

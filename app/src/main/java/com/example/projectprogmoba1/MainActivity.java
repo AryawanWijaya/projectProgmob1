@@ -6,10 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.mainActivityTextView); //R adl kelas yang digenerate olh layout, jadi masuknya di R smua
         Button myBtn = findViewById(R.id.button1);
-        Button helpBtn =findViewById(R.id.helpButton);
+        Button helpBtn = findViewById(R.id.helpButton);
         Button btnLayout = findViewById(R.id.btnTest);
         Button btnTableLayout = findViewById(R.id.btnTableLayout);
-        Button btnProteinTrackerLayout =findViewById(R.id.btnProteinTrackerLayout);
+        Button btnProteinTrackerLayout = findViewById(R.id.btnProteinTrackerLayout);
         Button btnFragment = findViewById(R.id.btnFragment);
         Button btnMahasiswa = findViewById(R.id.btnMahasiswa);
         Button btnList = findViewById(R.id.btnList);
@@ -49,28 +53,28 @@ public class MainActivity extends AppCompatActivity {
         btnLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,Main2Activity.class);
+                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
                 startActivity(intent);
             }
         });
         btnTableLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,TableLayoutActivity.class);
+                Intent intent = new Intent(MainActivity.this, TableLayoutActivity.class);
                 startActivity(intent);
             }
         });
         btnProteinTrackerLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,ProteinTracker_layout.class);
+                Intent intent = new Intent(MainActivity.this, ProteinTracker_layout.class);
                 startActivity(intent);
             }
         });
         btnFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,Main3FragmentActivity.class);
+                Intent intent = new Intent(MainActivity.this, Main3FragmentActivity.class);
                 startActivity(intent);
             }
         });
@@ -78,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         btnMahasiswa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,MainMahasiswaActivity.class);
+                Intent intent = new Intent(MainActivity.this, MainMahasiswaActivity.class);
                 startActivity(intent);
             }
         });
@@ -86,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         btnList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,ListActivity.class);
+                Intent intent = new Intent(MainActivity.this, ListActivity.class);
                 startActivity(intent);
             }
         });
@@ -94,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         btnListMhs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,ListMhsActivity.class);
+                Intent intent = new Intent(MainActivity.this, ListMhsActivity.class);
                 startActivity(intent);
             }
         });
@@ -108,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         btnCardViewInclass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,InClassRecyclerViewActvity.class);
+                Intent intent = new Intent(MainActivity.this, InClassRecyclerViewActvity.class);
                 startActivity(intent);
             }
         });
@@ -121,42 +125,73 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-        if (savedInstanceState !=null){ //fungsinya dia itu ngecek kadang klo di rottae hp itu ngerefresh activity trus apa yng sdh ditulis ilang
+        if (savedInstanceState != null) { //fungsinya dia itu ngecek kadang klo di rottae hp itu ngerefresh activity trus apa yng sdh ditulis ilang
             //makkannya di simpan di state trus di cek disini, jika sdh ada tulisane maa dia akan ngeluarke tulisane
-            Log.d("ProteinTracker",savedInstanceState.getString("abc"));
+            Log.d("ProteinTracker", savedInstanceState.getString("abc"));
         }
     }
 
+    //utk menyimpan di state,
     @Override
     protected void onSaveInstanceState(Bundle outState) { //fungsingnya utk simpen nilainya
         super.onSaveInstanceState(outState); //jadi nilainya disimpan di state, trus dipanggil diatas
 
-        outState.putString("abc","test");// parameternya yg pertama keynya, yg kedua apa yang mau disimpan
+        outState.putString("abc", "test");// parameternya yg pertama keynya, yg kedua apa yang mau disimpan
         super.onSaveInstanceState(outState);
     }
 
-
-
-
+//nampilin di logcat aja
     private View.OnClickListener myBtnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             EditText myEditText = findViewById(R.id.editText1);
-            Log.d("Proteintracker",myEditText.getText().toString());
+            Log.d("Proteintracker", myEditText.getText().toString());
         }
     };// sama kaya yang di comment diatas, bebas, tapi mending yang diatas lbh cepet
 
-    private  View.OnClickListener helpButtonListener = new View.OnClickListener() {
+
+    /*inti metodenya nyimpan nilai di state apa yang tertulis di edittext, dengan kata kunci "Help String" kemudian
+    dipanggil pada activity help nilai dari edit text itu utk ditmapilkan*/
+    private View.OnClickListener helpButtonListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(MainActivity.this,HelpActivity.class); //utk pindah activity, parameter adl kelas ini, kelas 7an
+            Intent intent = new Intent(MainActivity.this, HelpActivity.class); //utk pindah activity, parameter adl kelas ini, kelas 7an
             Bundle b = new Bundle();
-            EditText myEditText = (EditText)findViewById(R.id.editText1);
-            b.putString("Help String",myEditText.getText().toString());
+            EditText myEditText = (EditText) findViewById(R.id.editText1);
+            b.putString("Help String", myEditText.getText().toString());
             intent.putExtras(b);
 
             startActivity(intent);
         }
     };
+
+    //nmpilin icon titik tiga diatas
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu1, menu);
+        return true;
+    }
+
+    //item selected option menu --> layout diatur di menu1.xml pada bagian folder res->menu
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.item1) {
+//            Toast.makeText(getApplicationContext(),"Ini Menu pertama diklik",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, ProteinTracker_layout.class);
+            startActivity(intent);
+        } else if (item.getItemId() == R.id.item2) {
+            Intent intent = new Intent(MainActivity.this, MainMahasiswaActivity.class);
+            startActivity(intent);
+        }else if(item.getItemId()==R.id.item3){
+            Intent intent = new Intent(MainActivity.this,ListMhsActivity.class);
+            startActivity(intent);
+//            Toast.makeText(getApplicationContext(),"Ini Menu ketiga diklik",Toast.LENGTH_SHORT).show();
+//        }else if(item.getItemId()==R.id.item4){
+//            Toast.makeText(getApplicationContext(),"Ini Menu keempat diklik",Toast.LENGTH_SHORT).show();
+//        }
+        }
+            return true;
+        }
 }
+

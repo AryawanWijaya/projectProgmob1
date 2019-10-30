@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -24,6 +26,7 @@ public class ListMhsActivity extends AppCompatActivity {
             "Valeriana Tanesha Indra S","Ivan Bernov","Friska F. Nainggolan",
             "Grace Hutabarat","Beni Mulia Tabarus"
     };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,5 +57,34 @@ public class ListMhsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ListView listView = (ListView)findViewById(R.id.ListMhs);
+        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,mhs);
+        listView.setAdapter(adapter);
+        registerForContextMenu(listView);
+    }
+
+    //utk context menu, jika list ditahan lama keluar pilihan menunya
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.setHeaderTitle("Pilih Menumu");
+        menu.add(0,v.getId(),0,"Create"); //groupId, itemId, order, tittle
+        menu.add(0,v.getId(),0,"Edit");
+    }
+
+    public boolean onContextItemSelected(MenuItem item){
+        if(item.getTitle()=="Create"){
+            Intent intent = new Intent(ListMhsActivity.this, CreadMhsActivity.class);
+            startActivity(intent);
+//            Toast.makeText(getApplicationContext(),"pura-puranya item disimpan ke DB",Toast.LENGTH_SHORT).show();
+        }else if(item.getTitle()=="Edit"){
+            Intent intent = new Intent(ListMhsActivity.this, EditMhsActivity.class);
+            startActivity(intent);
+//            Toast.makeText(getApplicationContext(),"Tidak disimpan ke DB",Toast.LENGTH_SHORT).show();
+        }else{
+            return false;
+        }
+        return true;
     }
 }
