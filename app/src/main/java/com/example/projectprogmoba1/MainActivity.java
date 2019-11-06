@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnCardViewMhs = findViewById(R.id.btnCardViewMhs);
 
 
+
         textView.setText(R.string.test_untuk_update_view); //sama seperti variabel global dia tersimpat di res->value ->string
         myBtn.setOnClickListener(myBtnClickListener);
 

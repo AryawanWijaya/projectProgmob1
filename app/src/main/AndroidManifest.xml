@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CobaMenuActivity">
-
-        </activity>
-        <activity android:name=".TugasRecycleViewActivity"></activity>
+        <activity
+            android:name=".SettingProteinTracker"
+            android:label="@string/title_activity_setting_protein_tracker"></activity>
+        <activity android:name=".CobaMenuActivity"></activity>
+        <activity android:name=".TugasRecycleViewActivity" />
         <activity android:name=".InClassRecyclerViewActvity" />
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".EditMhsActivity" />
